@@ -335,9 +335,15 @@ textarea.edit-area { width: 100%; min-height: 80px; resize: vertical; background
   .js #app.booting .cmt,
   .js #app.booting .hintbar,
   .js #app.booting .tabs,
-  .js #app.booting .pgroup { opacity: 0; animation: row-in var(--t-reveal) var(--ease-out) both; }
+  .js #app.booting .pgroup,
+  .js #app.booting .board-cell,
+  .js #app.booting .tl-item,
+  .js #app.booting .mrow,
+  .js #app.booting .intent-row,
+  .js #app.booting .task-row { opacity: 0; animation: row-in var(--t-reveal) var(--ease-out) both; }
   .js #app.booting .hintbar, .js #app.booting .tabs { animation-delay: 60ms; }
-  .js #app.booting .pgroup { animation-delay: 140ms; }
+  .js #app.booting .pgroup, .js #app.booting .board-cell { animation-delay: 140ms; }
+  .js #app.booting .tl-item, .js #app.booting .mrow { animation-delay: 180ms; }
   .js #app.booting .cmt { animation-delay: calc(var(--i, 0) * 60ms + 160ms); }
   @keyframes row-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 }

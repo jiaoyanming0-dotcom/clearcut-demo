@@ -658,5 +658,22 @@
     if (e.key === 'Escape' && $('#modal-root').classList.contains('open')) closeModal();
   });
 
+  /* 演示直达：#/played 一步到走完流程的状态，#/compare 到有数据但未采用的状态。
+     用于演示、录屏与自动截图，确定性种子，不改变正常路径。 */
+  function seedFromHash() {
+    var h = (location.hash || '').replace(/^#\/?/, '');
+    if (h !== 'played' && h !== 'compare') return;
+    ['c1', 'c2', 'c3', 'c4', 'c5'].forEach(function (cid) { addIntent(cid); });
+    S.tasks = M.tasks.map(function (t) { return Object.assign({}, t); });
+    ['c1', 'c2', 'c5'].forEach(function (cid) { var c = cmt(cid); if (c) c.status = 'tasked'; });
+    S.taskGen = 'done';
+    S.hintDismissed = true;
+    S.step = 3;
+    S.view = 'compare';
+    if (h === 'played') { S.accepted = 'v2'; S.exported = true; S.completed = true; S.termExtra = 2; }
+    save();
+  }
+  seedFromHash();
+
   render();
 })();
