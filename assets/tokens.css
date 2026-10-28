@@ -1,36 +1,52 @@
-/* 剪意 ClearCut · 设计令牌（深色专业工具风） */
-:root{
-  --bg:#0F1115;
-  --surface:#151922;
-  --surface-2:#1B2029;
-  --surface-3:#222836;
-  --line:#262D3A;
-  --line-strong:#343D4E;
+/* 剪意 ClearCut · 设计令牌 v2.1
+   依据 design-taste-frontend：单一暖调石黑底、骨白墨色、场记黄主色（占比 <5%）、
+   扁平填充替代描边与阴影；字阶 5 级拉开；动效令牌统一。
+   v2.1 微调：压掉偏黄的色相，墨色与灰阶更中性，文字最小 13px。 */
 
-  --text:#E8ECF4;
-  --text-2:#B7BFCE;
-  --muted:#8A93A6;
-  --faint:#5D6577;
+:root {
+  color-scheme: dark;
 
-  --accent:#4EA8F5;
-  --accent-strong:#6FBBFA;
-  --accent-soft:rgba(78,168,245,.13);
+  /* 颜色角色 */
+  --bg: #141312;          /* 工作区底色，低饱和暖石黑 */
+  --surface: #1D1C1A;     /* 一级填充：行、面板、输入 */
+  --surface-2: #262422;   /* 二级填充：悬停、选中、轨道 */
+  --ink: #EBE7E1;         /* 骨白，正文与最强标记 */
+  --muted: #A9A39B;       /* 次级文字，对底约 7:1 */
+  --faint: #8C867D;       /* 第三级，仅用于非关键提示 */
+  --accent: #D9A521;      /* 场记黄：动作与「部分覆盖」 */
+  --accent-ink: #1A1305;
+  --accent-soft: rgba(217, 165, 33, .14);
+  --ok: #9BC07A;          /* 已覆盖，低饱和橄榄绿 */
+  --ok-soft: rgba(155, 192, 122, .13);
+  --gap: #9A9186;         /* 未覆盖，暖灰 */
+  --gap-soft: rgba(154, 145, 134, .13);
+  --err: #D9776A;         /* 仅用于错误文案与提示条 */
 
-  --ok:#3ECF8E;      --ok-soft:rgba(62,207,142,.13);
-  --warn:#E8B44A;    --warn-soft:rgba(232,180,74,.13);
-  --gap:#8A93A6;     --gap-soft:rgba(138,147,166,.14);
-  --err:#F2706D;     --err-soft:rgba(242,112,109,.13);
+  /* 分镜画面用色：扁平、无渐变 */
+  --scene-a: #3C4650;
+  --scene-b: #2B3038;
+  --scene-c: #4A4038;
+  --scene-d: #35402F;
 
-  --radius:10px;
-  --radius-sm:7px;
-  --shadow:0 10px 30px rgba(0,0,0,.42);
-  --shadow-sm:0 4px 14px rgba(0,0,0,.28);
+  /* 字体与字阶 */
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --fs-small: 13px;
+  --fs-body: 14px;
+  --fs-lead: 16px;
+  --fs-head: 21px;
+  --fs-display: 30px;
 
-  --font:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
-  --mono:ui-monospace,SFMono-Regular,"JetBrains Mono",Consolas,"Courier New",monospace;
+  /* 间距与圆角 */
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 24px; --sp-6: 32px;
+  --r: 6px; --r-lg: 10px;
 
-  --topbar-h:50px;
-  --sidebar-w:216px;
-  --panel-w:328px;
-  --fs-xs:11px; --fs-sm:12px; --fs-md:13px; --fs-lg:15px; --fs-xl:18px;
+  /* 动效 */
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+  --ease-in-out: cubic-bezier(.76, 0, .24, 1);
+  --t-press: 140ms; --t-hover: 180ms; --t-ui: 240ms; --t-reveal: 600ms;
+
+  /* 布局常量 */
+  --topbar-h: 54px;
+  --sidebar-w: 208px;
+  --panel-w: 316px;
 }
