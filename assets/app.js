@@ -606,7 +606,6 @@
       case 'copy': copyExport(); break;
       case 'modal-close':
         closeModal();
-        if (S.exported !== true && S.accepted) { /* 关闭预览即视为完成导出 */ }
         if (S.accepted && !S.completed) {
           S.exported = true; S.completed = true; S.termExtra = 2;
           commit();
