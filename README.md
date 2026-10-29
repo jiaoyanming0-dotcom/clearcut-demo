@@ -4,7 +4,7 @@
 
 ## 怎么用
 
-- 直接双击打开 `index.html`，或部署到任意静态托管（无需构建、无依赖、无后端）。
+- 通过 HTTP 访问（构建产物使用绝对路径）：线上 https://jiaoyanming0-dotcom.github.io/clearcut-demo/ ；本地可 `python -m http.server` 后打开。
 - 推荐视口 1600×900，最低 1280×720。
 
 ## 推荐体验路径（约 3 分钟）
@@ -28,3 +28,4 @@
 - 演示采用确定性 Mock 数据与脚本化交互，不调用真实 AI 模型（见 `docs/adr/0001`）。
 - 产品首先服务片方单侧使用，客户无需登录（见 `docs/adr/0002`）。
 - 领域术语表见 `GLOSSARY.md`；决策记录见 `docs/adr/`。
+- 界面基于 Cal.com 设计系统 coss ui 构建（React 19 + Tailwind CSS v4，见 `docs/adr/0004`）；本仓库托管构建产物，源码为同一交付中的 app/ 工程。
